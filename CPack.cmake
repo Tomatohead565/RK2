@@ -1,0 +1,23 @@
+include(InstallRequiredSystemLibraries)
+
+set(CPACK_PACKAGE_CONTACT kirill@gmail.com)
+set(CPACK_PACKAGE_VERSION ${PRINT_VERSION})
+set(CPACK_PACKAGE_NAME "decorator")
+set(CPACK_PACKAGE_VENDOR "kirill")
+set(CPACK_PACKAGE_PACK_NAME "decorator-${PRINT_VERSION}")
+
+set(CPACK_SOURCE_INSTALLED_DIRECTORIES 
+	"${CMAKE_SOURCE_DIR}/decorator; decorator"
+	"${CMAKE_SOURCE_DIR}/tests; tests")
+
+set(CPACK_SOURCE_GENERATOR "TGZ;ZIP")
+
+set(CPACK_DEBIAN_PACKAGE_VERSION ${PRINT_VERSION})
+set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "all")
+set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "decorates the windows")
+
+set(CPACK_GENERATOR "DEB;RPM")
+
+set(CPACK_RPM_PACKAGE_SUMMARY "decorates the windows")
+
+include(CPack)
